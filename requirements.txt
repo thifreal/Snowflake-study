@@ -1,0 +1,44 @@
+# Python dependencies for Snowflake data engineering project
+
+# Database
+snowflake-connector-python==3.4.1
+snowflake-sqlalchemy==1.5.1
+
+# Data processing
+pandas==2.0.3
+numpy==1.24.3
+pyarrow==12.0.1
+
+# Configuration and utilities
+pyyaml==6.0
+python-dotenv==1.0.0
+click==8.1.7
+
+# Logging
+python-json-logger==2.0.7
+
+# Testing
+pytest==7.4.3
+pytest-cov==4.1.0
+pytest-mock==3.12.0
+
+# Code quality
+pylint==3.0.2
+black==23.12.1
+flake8==6.1.0
+isort==5.13.2
+
+# Data validation
+pandera==0.18.1
+great-expectations==0.18.9
+
+# Orchestration (optional)
+airflow-snowflake==3.4.0
+
+# Development
+ipython==8.18.1
+jupyter==1.0.0
+jupyterlab==4.0.9
+
+# Monitoring
+sentry-sdk==1.38.0

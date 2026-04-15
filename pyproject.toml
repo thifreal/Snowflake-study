@@ -1,0 +1,86 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "snowflake-etl"
+version = "1.0.0"
+description = "Production-ready Snowflake ETL pipeline following medallion architecture"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [
+    {name = "Your Name", email = "your.email@company.com"}
+]
+keywords = [
+    "snowflake",
+    "etl",
+    "data-engineering",
+    "medallion-architecture"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+dependencies = [
+    "snowflake-connector-python>=3.4.1",
+    "snowflake-sqlalchemy>=1.5.1",
+    "pandas>=2.0.3",
+    "numpy>=1.24.3",
+    "pyyaml>=6.0",
+    "python-dotenv>=1.0.0",
+    "click>=8.1.7",
+    "python-json-logger>=2.0.7",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.3",
+    "pytest-cov>=4.1.0",
+    "pytest-mock>=3.12.0",
+    "pylint>=3.0.2",
+    "black>=23.12.1",
+    "flake8>=6.1.0",
+    "isort>=5.13.2",
+    "ipython>=8.18.1",
+    "jupyter>=1.0.0",
+]
+data-quality = [
+    "pandera>=0.18.1",
+    "great-expectations>=0.18.9",
+]
+monitoring = [
+    "sentry-sdk>=1.38.0",
+]
+
+[tool.setuptools]
+packages = ["src"]
+
+[tool.black]
+line-length = 100
+target-version = ['py39']
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.pylint.messages_control]
+disable = [
+    "C0330", "C0326",  # Bad whitespace
+    "R0913",           # Too many arguments
+    "R0914",           # Too many local variables
+]
+
+[tool.pylint.format]
+max-line-length = 100
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+testpaths = ["tests"]
+python_files = "test_*.py"
+addopts = "-v --tb=short"

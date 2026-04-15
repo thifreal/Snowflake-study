@@ -1,0 +1,43 @@
+# Production Environment Configuration
+
+environment: production
+debug: false
+
+# Snowflake Configuration
+snowflake:
+  warehouse: prod_compute_wh
+  database: prod_analytics_db
+  schema: bronze_prod
+  role: sysadmin
+
+# Pipeline Configuration
+pipeline:
+  bronze:
+    enabled: true
+    truncate_before_load: false
+    batch_size: 100000
+  silver:
+    enabled: true
+    data_quality_checks: true
+    deduplicate: true
+  gold:
+    enabled: true
+    refresh_materialized_views: true
+
+# Logging
+logging:
+  level: WARNING
+  format: json
+  output_file: logs/prod.log
+
+# Performance
+performance:
+  timeout_seconds: 900
+  max_retries: 3
+  retry_delay_seconds: 15
+
+# Monitoring
+monitoring:
+  enabled: true
+  sentry_endpoint: https://your-sentry-endpoint
+  alerting: true

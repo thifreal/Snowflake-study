@@ -1,0 +1,37 @@
+# Staging Environment Configuration
+
+environment: staging
+debug: false
+
+# Snowflake Configuration
+snowflake:
+  warehouse: staging_compute_wh
+  database: staging_analytics_db
+  schema: bronze_staging
+  role: analyst
+
+# Pipeline Configuration
+pipeline:
+  bronze:
+    enabled: true
+    truncate_before_load: false
+    batch_size: 50000
+  silver:
+    enabled: true
+    data_quality_checks: true
+    deduplicate: true
+  gold:
+    enabled: true
+    refresh_materialized_views: true
+
+# Logging
+logging:
+  level: INFO
+  format: json
+  output_file: logs/staging.log
+
+# Performance
+performance:
+  timeout_seconds: 600
+  max_retries: 3
+  retry_delay_seconds: 10

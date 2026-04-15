@@ -1,0 +1,37 @@
+# Development Environment Configuration
+
+environment: development
+debug: true
+
+# Snowflake Configuration
+snowflake:
+  warehouse: dev_compute_wh
+  database: dev_analytics_db
+  schema: bronze_dev
+  role: developer
+
+# Pipeline Configuration
+pipeline:
+  bronze:
+    enabled: true
+    truncate_before_load: false
+    batch_size: 10000
+  silver:
+    enabled: true
+    data_quality_checks: true
+    deduplicate: true
+  gold:
+    enabled: true
+    refresh_materialized_views: true
+
+# Logging
+logging:
+  level: DEBUG
+  format: detailed
+  output_file: logs/dev.log
+
+# Performance
+performance:
+  timeout_seconds: 300
+  max_retries: 3
+  retry_delay_seconds: 5
