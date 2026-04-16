@@ -1,0 +1,25 @@
+# Development dependencies - includes testing, quality, and notebooks
+
+-r requirements.txt
+
+# Testing - with flexible versions
+pytest>=7.4.3
+pytest-cov>=4.1.0
+pytest-mock>=3.12.0
+
+# Code quality
+pylint>=3.0.2
+black>=23.12.1
+flake8>=6.1.0
+isort>=5.13.2
+
+# Jupyter notebooks
+ipython>=8.18.1
+jupyter>=1.0.0
+jupyterlab>=4.0.9
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Optional: Orchestration (Airflow)
+# Uncomment to use with Apache Airflow
+# apache-airflow-providers-snowflake>=4.3.0

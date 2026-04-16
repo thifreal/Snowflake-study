@@ -64,9 +64,14 @@ snowflake-study/
    ```
 
 3. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
+   
+   Choose installation based on your use case:
+   
+   - **Production** (minimal): `pip install -r requirements-prod.txt`
+   - **Development** (testing + notebooks): `pip install -r requirements-dev.txt`
+   - **Complete** (all features): `pip install -r requirements.txt`
+   
+   📖 **See [INSTALLATION.md](INSTALLATION.md) for detailed guidance, troubleshooting, and platform-specific notes.**
 
 4. **Configure Snowflake connection**
    ```bash

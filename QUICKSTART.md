@@ -3,6 +3,18 @@
 ## 5-Minute Setup
 
 ### 1. Install Dependencies
+
+**Production (minimal dependencies)**:
+```bash
+pip install -r requirements-prod.txt
+```
+
+**Development (includes testing, notebooks, quality tools)**:
+```bash
+pip install -r requirements-dev.txt
+```
+
+**Or complete (all)**: 
 ```bash
 pip install -r requirements.txt
 ```
