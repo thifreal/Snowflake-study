@@ -1,0 +1,22 @@
+# Production dependencies - core Snowflake data engineering
+# Pinned versions for stability
+
+# Database & Snowflake
+snowflake-connector-python==3.4.1
+snowflake-sqlalchemy>=1.5.1
+
+# Data processing
+pandas>=2.0.3
+numpy>=1.24.3
+pyarrow>=12.0.1
+
+# Configuration and utilities
+pyyaml>=6.0
+python-dotenv>=1.0.0
+click>=8.1.7
+
+# Logging
+python-json-logger>=2.0.7
+
+# Monitoring
+sentry-sdk>=1.38.0
